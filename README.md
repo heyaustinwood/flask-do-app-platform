@@ -51,8 +51,8 @@ modified command, necessary to deploy:
 ```
 gunicorn --worker-tmp-dir /dev/shm app:app
 ```
-
 once you hit save, the build and deploy process should start over again.
+
 7. the app should build and deploy successfully, however when you open it in the browser, it will probably have an error screen. app is good but we need to go back and get database connect settings now.
 8. go back to settings and select the database under components just below the horizontal nav bar. Scroll down to connect details and click view. change the dropdown to connection string and copy the contents. scroll up and select the app under components and then edit the environment variable for `SQLALCHEMY_DATABASE_URI`. Paste the connection string into the value input. Press save and your app will begin rebuilding and deploying.
 
