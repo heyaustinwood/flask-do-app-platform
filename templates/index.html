@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+
+{% block page_title %}Home Page Title Here{% endblock %}
+{% block meta_description %}Meta description goes right here for the page. Make sure it's descriptive so the user knows what they are looking at{% endblock %}
+
+{% block content %}
+
+  <h1>digital ocean flask app is working and running on app platform</h1>
+
+  <p>If you see this page, and some table content below, the app is running correctly.</p>
+
+  <p>You can test the database and add something to the table below by <a href={{ url_for('addfaq') }}>clicking here</a>.</p>
+
+  {%for faq in data%}
+  <p><small>{{faq.id}}<br/>{{faq.timestamp}}</small><br><strong>{{faq.question}}</strong><br/>{{faq.answer}}</p>
+  {%endfor%}
+
+{% endblock %}
